@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Product>RPGCore</Product>
+    <Description>RPGCore is a toolkit for producing RPG games and mechanics in C#.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\libs\RPGCore.Behaviour\RPGCore.Behaviour.csproj" />
+    <ProjectReference Include="..\..\libs\RPGCore.World\RPGCore.World.csproj" />
+    <ProjectReference Include="..\RPGCore.Data.Polymorphic.NewtonsoftJson\RPGCore.Data.Polymorphic.NewtonsoftJson.csproj" />
+    <ProjectReference Include="..\RPGCore.Data.Polymorphic.SystemTextJson\RPGCore.Data.Polymorphic.SystemTextJson.csproj" />
+    <ProjectReference Include="..\RPGCore.DataEditor\RPGCore.DataEditor.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <NoWarn>CS1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Samples\**\*.*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis" Version="3.10.0" />
+    <PackageReference Include="Basic.Reference.Assemblies" Version="1.1.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="5.0.0" />
+  </ItemGroup>
+
+</Project>
