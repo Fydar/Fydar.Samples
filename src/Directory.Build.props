@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+
+  <!-- Informative -->
+  <PropertyGroup>
+    <Authors>Anthony Marmont</Authors>
+    <Copyright>Copyright © Anthony Marmont</Copyright>
+    <Company>Fydar</Company>
+
+    <EnableDefaultNoneItems>false</EnableDefaultNoneItems>
+    <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+
+    <PackageProjectUrl>https://github.com/Fydar/Samples</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Fydar/Samples</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  <!-- Icon -->
+  <PropertyGroup>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageIconUrl>https://raw.githubusercontent.com/Fydar/Samples/main/src/$(MSBuildProjectName)/icon.png</PackageIconUrl>
+  </PropertyGroup>
+
+  <ItemGroup Condition=" '$(IsPackable)' == 'true' ">
+    <None Include="$(MSBuildThisFileDirectory)$(MSBuildProjectName)/icon.png">
+      <Pack>true</Pack>
+      <PackagePath>/$(PackageIcon)</PackagePath>
+      <Visible>false</Visible>
+    </None>
+  </ItemGroup>
+
+  <!-- Output -->
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <OverwriteReadOnlyFiles>true</OverwriteReadOnlyFiles>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <GenerateFullPaths Condition="'$(TERM_PROGRAM)' == 'vscode'">true</GenerateFullPaths>
+
+    <BaseArtifactsPath>$(MSBuildThisFileDirectory)../artifacts/</BaseArtifactsPath>
+    <BaseArtifactsPathSuffix>$(MSBuildProjectName)</BaseArtifactsPathSuffix>
+
+    <BaseOutputPath>$(BaseArtifactsPath)bin/$(BaseArtifactsPathSuffix)/</BaseOutputPath>
+    <BaseIntermediateOutputPath>$(BaseArtifactsPath)obj/$(BaseArtifactsPathSuffix)/</BaseIntermediateOutputPath>
+    <PackageOutputPath>$(BaseArtifactsPath)pkg/$(Configuration)/</PackageOutputPath>
+  </PropertyGroup>
+
+</Project>

@@ -1,0 +1,7 @@
+/* important comments */ 
+{
+  "Name": "Excalibur",
+  "Damage": 50,
+  "Durability": 800,
+  "IsEnchantable": true
+}
