@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Fydar.Samples\Fydar.Samples.csproj" />
+    <ProjectReference Include="..\Fydar.Samples.CSharp\Fydar.Samples.CSharp.csproj" />
+    <ProjectReference Include="..\Fydar.Samples.Json\Fydar.Samples.Json.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Samples\*.*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
