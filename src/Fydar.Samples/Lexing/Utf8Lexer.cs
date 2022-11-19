@@ -64,12 +64,8 @@ public class Utf8Lexer
 				startIndex = 0;
 				minimumActiveClassifierIndex = 0;
 
-				int classifiersCount = classifiers.Length;
-				var classifierStates = new Utf8TokenClassifierState[classifiersCount];
-
 				classifierAction = new Utf8Classifier()
 				{
-					classifierStates = classifierStates,
 					favouredTokenLength = -1
 				};
 
@@ -84,18 +80,17 @@ public class Utf8Lexer
 				{
 					// Read the next UTF8 character.
 					// TODO: Utilise proper end-of-file or end-of-stream indicators.
+					// TODO: Utilise the System.Text Rune API for representing the current character.
+
 					classifierAction.anyContinuing = false;
 					classifierAction.Current = currentIndex != bytes.Length
 						? bytes[currentIndex]
 						: (byte)32; // UTF8 for SPACE;
 
-					string? str = Encoding.UTF8.GetString(new byte[1] { classifierAction.Current });
-
 					// Iterate through all of our classifiers until they have all given up or tokenized.
 					for (int i = minimumActiveClassifierIndex; i < classifiersCount; i++)
 					{
-						var classifierState = classifierAction.classifierStates[i];
-						if (classifierState.hasGivenUp)
+						if (classifierAction.hasClassifierGivenUp[i])
 						{
 							// To optimize, once we have assessed that this classifier has given up, don't re-check it in the future.
 							if (i == minimumActiveClassifierIndex)
@@ -148,12 +143,9 @@ public class Utf8Lexer
 						classifierAction.SpanLength = 0;
 						classifierAction.favouredTokenLength = -1;
 						classifierAction.favouredTokenKind = TokenKind.Unknown;
+						classifierAction.hasClassifierGivenUp.Clear();
+
 						minimumActiveClassifierIndex = 0;
-						for (int i = 0; i < classifiersCount; i++)
-						{
-							ref var classifierState = ref classifierAction.classifierStates[i];
-							classifierState.hasGivenUp = false;
-						}
 						break;
 					}
 				}
