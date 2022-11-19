@@ -1,55 +1,59 @@
 ﻿using Fydar.Samples.Internal;
 using Fydar.Samples.Rendering;
 using System.IO;
+using System.Threading;
 using System.Threading.Tasks;
 
-namespace Fydar.Samples
+namespace Fydar.Samples;
+
+public class SampleProject
 {
-	public class SampleProject
+	private readonly ISampleLibrary[] sampleLibraries;
+	private readonly ISampleRenderer[] sampleRenderers;
+	private readonly ISampleSink[] sampleSinks;
+
+	internal SampleProject(
+		ISampleLibrary[] sampleLibraries,
+		ISampleRenderer[] sampleRenderers,
+		ISampleSink[] sampleSinks)
 	{
-		private readonly ISampleGenerator[] sampleGenerators;
-		private readonly ISampleRenderer[] sampleRenderers;
+		this.sampleLibraries = sampleLibraries;
+		this.sampleRenderers = sampleRenderers;
+		this.sampleSinks = sampleSinks;
+	}
 
-		public SampleProject(
-			ISampleGenerator[] sampleGenerators,
-			ISampleRenderer[] sampleRenderers)
+	public async Task GenerateSamplesAsync(
+		string outputDirectory,
+		CancellationToken cancellationToken = default)
+	{
+		var directoryInfo = new DirectoryInfo(outputDirectory);
+		if (directoryInfo.Exists)
 		{
-			this.sampleGenerators = sampleGenerators;
-			this.sampleRenderers = sampleRenderers;
+			directoryInfo.Delete(true);
 		}
+		directoryInfo.Create();
 
-		public async Task GenerateSamplesAsync(string outputDirectory)
+		foreach (var sampleLibrary in sampleLibraries)
 		{
-			var directoryInfo = new DirectoryInfo(outputDirectory);
-			if (directoryInfo.Exists)
+			await foreach (var sample in sampleLibrary.GetSamplesAsync(cancellationToken))
 			{
-				directoryInfo.Delete(true);
-			}
-			directoryInfo.Create();
-
-			foreach (var sampleGenerator in sampleGenerators)
-			{
-				await foreach (var sample in sampleGenerator.GenerateSamples())
+				foreach (var sampleRenderer in sampleRenderers)
 				{
-					foreach (var renderer in sampleRenderers)
-					{
-						string? sampleFile = Path.Combine(outputDirectory, renderer.Extension, sample.Identifier);
-						sampleFile = Path.ChangeExtension(sampleFile, renderer.Extension);
-						var sampleFileInfo = new FileInfo(sampleFile);
-
-
-						sampleFileInfo.Directory?.Create();
-
-						using var fileStream = File.OpenWrite(sampleFile);
-						renderer.Render(sample, fileStream);
-					}
+					// string? sampleFile = Path.Combine(outputDirectory, sampleRenderer.Extension, sample.Reigion);
+					// sampleFile = Path.ChangeExtension(sampleFile, sampleRenderer.Extension);
+					// var sampleFileInfo = new FileInfo(sampleFile);
+					// 
+					// sampleFileInfo.Directory?.Create();
+					// 
+					// using var fileStream = File.OpenWrite(sampleFile);
+					// await sampleRenderer.RenderAsync(sample, fileStream, cancellationToken);
 				}
 			}
 		}
+	}
 
-		public static ISampleProjectBuilder Create()
-		{
-			return new SampleProjectBuilder();
-		}
+	public static ISampleProjectBuilder Create()
+	{
+		return new SampleProjectBuilder();
 	}
 }

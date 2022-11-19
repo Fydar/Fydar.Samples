@@ -8,8 +8,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Fydar.Samples\Fydar.Samples.csproj" />
-    <ProjectReference Include="..\Fydar.Samples.CSharp\Fydar.Samples.CSharp.csproj" />
-    <ProjectReference Include="..\Fydar.Samples.Json\Fydar.Samples.Json.csproj" />
+    <ProjectReference Include="..\Fydar.Samples.Grammars.CSharp\Fydar.Samples.Grammars.CSharp.csproj" />
+    <ProjectReference Include="..\Fydar.Samples.Grammars.Json\Fydar.Samples.Grammars.Json.csproj" />
+    <ProjectReference Include="..\Fydar.Samples.Rendering.ToSvg\Fydar.Samples.Rendering.ToSvg.csproj" />
   </ItemGroup>
 
   <ItemGroup>

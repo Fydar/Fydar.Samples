@@ -1,11 +1,10 @@
 ﻿using Fydar.Samples.Rendering;
 
-namespace Fydar.Samples
+namespace Fydar.Samples;
+
+public interface ISampleProjectBuilder
 {
-	public interface ISampleProjectBuilder
-	{
-		ISampleProjectBuilder AddSamples(ISampleGenerator sampleGenerator);
-		ISampleProjectBuilder RenderTo(ISampleRenderer sampleRenderer);
-		SampleProject Build();
-	}
+	ISampleProjectBuilder AddSampleLibrary(ISampleLibrary sampleGenerator);
+	ISampleProjectBuilder RenderTo(ISampleRenderer sampleRenderer);
+	SampleProject Build();
 }

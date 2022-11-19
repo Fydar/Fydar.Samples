@@ -8,6 +8,7 @@
     <PackageId>Fydar.Samples</PackageId>
     <VersionPrefix>0.0.1</VersionPrefix>
     <VersionSuffix>alpha</VersionSuffix>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
 </Project>
