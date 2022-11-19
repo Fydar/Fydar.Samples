@@ -14,7 +14,7 @@ public ref struct Utf8Classifier
 
 	internal bool anyContinuing;
 	internal int currentClassifierIndex;
-	internal Span<Utf8TokenClassifierState> classifierStates;
+	internal BitArray64 hasClassifierGivenUp;
 
 	/// <summary>
 	/// The length of the span that the classifier is currently considering.
@@ -31,10 +31,7 @@ public ref struct Utf8Classifier
 	/// </summary>
 	public void GiveUp()
 	{
-		classifierStates[currentClassifierIndex] = new Utf8TokenClassifierState()
-		{
-			hasGivenUp = true
-		};
+		hasClassifierGivenUp.SetTrue(currentClassifierIndex);
 	}
 
 	/// <summary>
@@ -50,10 +47,7 @@ public ref struct Utf8Classifier
 			favouredTokenLength = endLength;
 			favouredTokenKind = tokenKind;
 		}
-		classifierStates[currentClassifierIndex] = new Utf8TokenClassifierState()
-		{
-			hasGivenUp = true
-		};
+		hasClassifierGivenUp.SetTrue(currentClassifierIndex);
 	}
 
 	/// <summary>
@@ -67,10 +61,7 @@ public ref struct Utf8Classifier
 			favouredTokenLength = SpanLength;
 			favouredTokenKind = tokenKind;
 		}
-		classifierStates[currentClassifierIndex] = new Utf8TokenClassifierState()
-		{
-			hasGivenUp = true
-		};
+		hasClassifierGivenUp.SetTrue(currentClassifierIndex);
 	}
 
 	/// <summary>
