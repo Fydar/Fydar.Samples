@@ -1,28 +1,29 @@
 ﻿using Fydar.Samples.Formatting;
 using Fydar.Samples.Formatting.CSharpFormatting;
-using Fydar.Samples.Formatting.JsonFormatting;
-using Fydar.Samples.Rendering.Svg;
+using Fydar.Samples.Grammars;
+using Fydar.Samples.Grammars.Json;
+using Fydar.Samples.Rendering.ToSvg;
 using System.Threading.Tasks;
 
-namespace Fydar.Samples.Demo
+namespace Fydar.Samples.Demo;
+
+internal class Program
 {
-	internal class Program
+	private static async Task Main(string[] args)
 	{
-		private static async Task Main(string[] args)
-		{
-			var sampleProject = SampleProject.Create()
-				.AddFormattedSamples(options =>
-				{
-					options.AddSource(new FileSystemSource("Samples"));
-					options.AddSource(new SampleReturnSampleSource(typeof(Program).Assembly));
+		var grammars = LanguageLibrary.Create()
+			.AddJson()
+			.Build();
 
-					options.AddFormatter(new CSharpSampleFormatter());
-					options.AddFormatter(new JsonSampleFormatter());
-				})
-				.RenderTo(new SvgSampleRenderer())
-				.Build();
+		var sampleProject = SampleProject.Create()
+			.AddFormattedSamples(options =>
+			{
+				options.AddSource(new FileSystemSampleContentLibrary("Samples"));
+				options.AddSource(new SampleReturnContentLibrary(typeof(Program).Assembly));
+			})
+			.RenderTo(new SvgSampleRenderer())
+			.Build();
 
-			await sampleProject.GenerateSamplesAsync("output");
-		}
+		await sampleProject.GenerateSamplesAsync("output");
 	}
 }
