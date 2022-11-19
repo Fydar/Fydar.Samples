@@ -28,4 +28,3 @@ internal struct DebuggerViewSyntaxTreeNodeCollection
 		return new DebuggerViewSyntaxTreeNodeCollection(nodes);
 	}
 }
-

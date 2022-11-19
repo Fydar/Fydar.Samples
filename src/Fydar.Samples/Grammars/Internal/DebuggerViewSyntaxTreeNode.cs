@@ -7,9 +7,13 @@ namespace Fydar.Samples.Grammars.Internal;
 internal struct DebuggerViewSyntaxTreeNode
 {
 	public TokenKind Kind { get; }
+
 	public DebuggerViewSyntaxTreeNodeCollection ChildNodes { get; }
+
 	public DebuggerViewGrammarTokenCollection ContentLexicalTokens { get; }
+
 	public DebuggerViewGrammarTokenCollection LeadingLexicalTokens { get; }
+
 	public DebuggerViewGrammarTokenCollection TrailingLexicalTokens { get; }
 
 	public DebuggerViewSyntaxTreeNode(SyntaxTreeNode syntaxTreeNode)
@@ -55,4 +59,3 @@ internal struct DebuggerViewSyntaxTreeNode
 		}
 	}
 }
-

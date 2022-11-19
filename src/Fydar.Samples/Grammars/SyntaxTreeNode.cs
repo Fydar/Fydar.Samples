@@ -12,7 +12,7 @@ public readonly ref struct SyntaxTreeNode
 	internal readonly int syntaxTreeNodeIndex;
 
 	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-	public readonly int lexicalTokenIndex;
+	private readonly int lexicalTokenIndex;
 
 	public TokenKind Kind
 	{ 
@@ -125,7 +125,7 @@ public readonly ref struct SyntaxTreeNode
 		}
 	}
 
-	public SyntaxTreeNode(
+	internal SyntaxTreeNode(
 		SyntaxTreeDocument syntaxTreeDocument,
 		int syntaxTreeNodeIndex,
 		int lexicalTokenIndex)

@@ -1,6 +1,5 @@
 ﻿using Fydar.Samples.Grammars;
 using Fydar.Samples.Lexing.Internal;
-using System;
 
 namespace Fydar.Samples.Lexing;
 

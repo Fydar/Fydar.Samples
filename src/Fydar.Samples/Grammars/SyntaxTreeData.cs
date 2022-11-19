@@ -1,6 +1,6 @@
 ﻿namespace Fydar.Samples.Grammars;
 
-public readonly ref struct SyntaxTreeData
+public readonly struct SyntaxTreeData
 {
 	public readonly SyntaxTreeDataNode[] nodes;
 
@@ -9,4 +9,3 @@ public readonly ref struct SyntaxTreeData
 		this.nodes = nodes;
 	}
 }
-

@@ -37,6 +37,7 @@ public readonly ref struct SyntaxTreeExplorerChildNodesEnumerable
 			{
 				return false;
 			}
+
 			if (currentNodeIndex == -1)
 			{
 				currentNodeIndex = offset;
@@ -47,7 +48,6 @@ public readonly ref struct SyntaxTreeExplorerChildNodesEnumerable
 			else
 			{
 				ref var lastNode = ref syntaxTreeDocument.syntaxTreeData.nodes[currentNodeIndex];
-				// currentLexicalTokenIndex += lastNode.leadingLexicalTokensCount;
 				currentLexicalTokenIndex += lastNode.totalLexicalTokenSize;
 
 				if (lastNode.childNodeCount == 0)
@@ -64,7 +64,6 @@ public readonly ref struct SyntaxTreeExplorerChildNodesEnumerable
 					ref var currentNode = ref syntaxTreeDocument.syntaxTreeData.nodes[currentNodeIndex];
 					currentLexicalTokenIndex += currentNode.leadingLexicalTokensCount + 1;
 				}
-				// currentLexicalTokenIndex++;
 			}
 			return currentNodeIndex <= offset + length - 1;
 		}
@@ -131,4 +130,3 @@ public readonly ref struct SyntaxTreeExplorerChildNodesEnumerable
 		return new SyntaxTreeExplorerChildNodesEnumerator(syntaxTreeDocument, offset, length, lexicalTokenIndex);
 	}
 }
-
