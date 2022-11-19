@@ -5,8 +5,8 @@ namespace Fydar.Samples.Grammars.Json;
 
 public class SyntaxTreeDataBuilder
 {
-	internal readonly List<SyntaxTreeDataNode> nodeData = new();
-	internal readonly Stack<WriterNode> openNodes = new();
+	internal readonly List<SyntaxTreeDataNode> nodeData = new(16);
+	internal readonly Stack<WriterNode> openNodes = new(8);
 
 	internal ushort childNodeCounter;
 	internal ushort childLexicalTokenCounter;

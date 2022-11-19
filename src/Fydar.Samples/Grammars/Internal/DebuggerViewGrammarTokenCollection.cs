@@ -33,4 +33,3 @@ internal struct DebuggerViewGrammarTokenCollection
 		return new DebuggerViewGrammarTokenCollection(tokens);
 	}
 }
-

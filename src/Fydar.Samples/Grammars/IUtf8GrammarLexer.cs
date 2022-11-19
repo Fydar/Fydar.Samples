@@ -7,5 +7,6 @@ namespace Fydar.Samples.Grammars;
 /// </summary>
 public interface IUtf8GrammarLexer : IGrammarProvider
 {
-	public ReadOnlySpan<GrammarToken> Tokenize(ReadOnlySpan<byte> bytes);
+	public ReadOnlySpan<GrammarToken> Tokenize(
+		ReadOnlySpan<byte> bytes);
 }
