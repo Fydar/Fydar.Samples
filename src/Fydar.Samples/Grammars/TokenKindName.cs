@@ -41,6 +41,7 @@ public class TokenKindName
 		ClassName = "Unknown";
 		ShortClassName = "x";
 		Identifier = new TokenKind(0);
+		InheritFromNames = Array.Empty<TokenKindName>();
 	}
 
 	public TokenKindName(string className, string shortClassName)

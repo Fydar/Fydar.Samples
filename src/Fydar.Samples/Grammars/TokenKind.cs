@@ -1,4 +1,6 @@
-﻿namespace Fydar.Samples.Grammars;
+﻿using System.Collections.Generic;
+
+namespace Fydar.Samples.Grammars;
 
 public struct TokenKind
 {
@@ -7,6 +9,8 @@ public struct TokenKind
 	internal readonly ushort tokenId;
 
 	public TokenKindName Name => TokenKindName.catalogue[tokenId];
+
+	public IEnumerable<TokenKind> InheritsFrom => TokenKindName.catalogue[tokenId].AllInheritsFrom;
 
 	internal TokenKind(ushort tokenId)
 	{
@@ -20,7 +24,7 @@ public struct TokenKind
 			return true;
 		}
 
-		var otherTokenSources = TokenKindName.catalogue[tokenKind.tokenId].AllInheritsFrom;
+		var otherTokenSources = TokenKindName.catalogue[tokenId].AllInheritsFrom;
 
 		foreach (var otherTokenSource in otherTokenSources)
 		{
@@ -39,7 +43,7 @@ public struct TokenKind
 
 	public static bool operator !=(TokenKind left, TokenKind right)
 	{
-		return left.tokenId == right.tokenId;
+		return left.tokenId != right.tokenId;
 	}
 
 	public override string ToString()

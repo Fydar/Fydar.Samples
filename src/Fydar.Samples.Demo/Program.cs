@@ -1,8 +1,7 @@
-﻿using Fydar.Samples.Formatting;
-using Fydar.Samples.Formatting.CSharpFormatting;
-using Fydar.Samples.Grammars;
+﻿using Fydar.Samples.CodeSnippets;
+using Fydar.Samples.Grammars.CSharp;
 using Fydar.Samples.Grammars.Json;
-using Fydar.Samples.Rendering.ToSvg;
+using Fydar.Samples.Themes.VisualStudio2022Dark;
 using System.Threading.Tasks;
 
 namespace Fydar.Samples.Demo;
@@ -11,19 +10,29 @@ internal class Program
 {
 	private static async Task Main(string[] args)
 	{
-		var grammars = LanguageLibrary.Create()
-			.AddJson()
-			.Build();
+		var sampleProject = SampleProject.Create(project =>
+		{
+			project.Grammars.AddCSharp();
+			project.Grammars.AddJson();
 
-		var sampleProject = SampleProject.Create()
-			.AddFormattedSamples(options =>
+			project.Samples.AddFromSourceFiles("Samples/");
+			project.Samples.AddMethodReturns();
+
+			project.Rendering.Configure<CodeSnippet>(render =>
 			{
-				options.AddSource(new FileSystemSampleContentLibrary("Samples"));
-				options.AddSource(new SampleReturnContentLibrary(typeof(Program).Assembly));
-			})
-			.RenderTo(new SvgSampleRenderer())
-			.Build();
+				render.Layout.UseCodeSnippet(render.Model);
+				render.Theme.UseVisualStudio2022Dark();
+			});
 
-		await sampleProject.GenerateSamplesAsync("output");
+			project.Exporter.AddExport(export =>
+			{
+				export.Format.AsSvg();
+				export.To.Directory("output/svg/");
+
+				export.UpdateMarkdownHyperlinks();
+			});
+		});
+
+		await sampleProject.ExportAsync();
 	}
 }

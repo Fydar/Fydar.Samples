@@ -6,6 +6,11 @@
 public static class StandardToken
 {
 	/// <summary>
+	/// A token that represents the line number.
+	/// </summary>
+	public static readonly TokenKindName LineNumber = new("linenumber", "ln");
+
+	/// <summary>
 	/// A token that represents an identifier across multiple languages.
 	/// </summary>
 	public static readonly TokenKindName Whitespace = new("whitespace", "w");
@@ -29,6 +34,11 @@ public static class StandardToken
 	/// A token that represents a keyword across multiple languages.
 	/// </summary>
 	public static readonly TokenKindName Keyword = new("keyword", "kw");
+
+	/// <summary>
+	/// A token that represents a keyword across multiple languages.
+	/// </summary>
+	public static readonly TokenKindName KeywordControl = new("keyword-onctrol", "kwc");
 
 	/// <summary>
 	/// A token that represents a string across multiple languages.

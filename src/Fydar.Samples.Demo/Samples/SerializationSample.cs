@@ -1,4 +1,4 @@
-﻿using Fydar.Samples.Formatting;
+﻿using Fydar.Samples.CodeSnippets;
 using System;
 using System.Text.Json;
 
@@ -16,7 +16,7 @@ public class SerializationSample
 	#endregion serialization_model
 
 	#region serialization_demo
-	[SampleReturn(".json", "serialized")]
+	[return: SampleCodeSnippet(format: "json")]
 	public static string Run()
 	{
 		var weatherForecast = new WeatherForecast

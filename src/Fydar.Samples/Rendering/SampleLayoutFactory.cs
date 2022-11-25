@@ -1,4 +1,4 @@
-﻿namespace Fydar.Samples.Rendering.Layouts;
+﻿/*namespace Fydar.Samples.Rendering.Layouts;
 
 public class SampleLayoutFactory : ISampleLayoutFactory
 {
@@ -56,3 +56,4 @@ public class SampleLayoutFactory : ISampleLayoutFactory
 			.Build();
 	}
 }
+*/

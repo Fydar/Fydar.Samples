@@ -1,4 +1,4 @@
-﻿namespace Fydar.Samples.Rendering.ComputedElements;
+﻿namespace Fydar.Samples.Rendering.Computed;
 
 public struct ComputedElementBoxShadow
 {

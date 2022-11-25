@@ -91,7 +91,7 @@ public static class JsonToken
 	/// <summary>
 	/// A token that represents Json property name.
 	/// </summary>
-	public static readonly TokenKindName JsonPropertyName = new("json-property-name", "js-pn", StandardToken.Identifier);
+	public static readonly TokenKindName JsonPropertyName = new("json-property-name", "js-pn", StandardToken.PropertyName);
 
 	/// <summary>
 	/// A token that represents Json property value.

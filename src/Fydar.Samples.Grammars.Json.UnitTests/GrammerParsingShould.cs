@@ -1,3 +1,4 @@
+using Fydar.Samples.Grammars.Syntax;
 using NUnit.Framework;
 using System;
 using System.Text;
@@ -69,37 +70,6 @@ public class GrammerParsingShould
 
 		var grammerParser = new JsonUtf8GrammarParser();
 		var syntaxTree = grammerParser.Parse(jsonBytes, lexicalTokens);
-
-		var textStyles = TextStyleLibrary.Create()
-			.StyleDefault(style =>
-			{
-				style.Color = ConsoleColor.Gray;
-			})
-			.StyleClass(StandardToken.Comment, style =>
-			{
-				style.Color = ConsoleColor.DarkGreen;
-			})
-			.StyleClass(StandardToken.String, style =>
-			{
-				style.Color = ConsoleColor.Yellow;
-			})
-			.StyleClass(StandardToken.PropertyName, style =>
-			{
-				style.Color = ConsoleColor.Cyan;
-			})
-			.StyleClass(StandardToken.Keyword, style =>
-			{
-				style.Color = ConsoleColor.Blue;
-			})
-			.StyleClass(StandardToken.Structure, style =>
-			{
-				style.Color = ConsoleColor.DarkGray;
-			})
-			.StyleClass(StandardToken.Number, style =>
-			{
-				style.Color = ConsoleColor.DarkCyan;
-			})
-			.Build();
 
 		var document = new SyntaxTreeDocument(syntaxTree, lexicalTokens);
 		RecursivePrint(document.ChildNodes);
@@ -189,49 +159,5 @@ public class GrammerParsingShould
 		{
 			Console.Write($"[{Encoding.UTF8.GetString(jsonBytes[lexicalToken.range])}]");
 		}
-	}
-
-	public class TextStyleLibrary
-	{
-		internal TextStyleLibrary()
-		{
-		}
-
-		public ComputedTextStyle GetComputedTextStyle(TokenKind tokenKind)
-		{
-
-			return null;
-		}
-
-		public static TextStyleLibraryBuilder Create()
-		{
-			return new TextStyleLibraryBuilder();
-		}
-	}
-
-	public class TextStyleLibraryBuilder
-	{
-		public TextStyleLibraryBuilder StyleDefault(Action<ComputedTextStyle> classStyle)
-		{
-
-			return this;
-		}
-
-		public TextStyleLibraryBuilder StyleClass(TokenKind tokenKind, Action<ComputedTextStyle> classStyle)
-		{
-
-			return this;
-		}
-
-		public TextStyleLibrary Build()
-		{
-			return new TextStyleLibrary();
-		}
-	}
-
-
-	public class ComputedTextStyle
-	{
-		public ConsoleColor Color;
 	}
 }

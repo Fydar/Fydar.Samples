@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fydar.Samples.Grammars.Syntax;
+using System;
 
 namespace Fydar.Samples.Grammars;
 
@@ -8,4 +9,3 @@ public interface IUtf8GrammerParser : IGrammarProvider
 		ReadOnlySpan<byte> bytes,
 		ReadOnlySpan<GrammarToken> lexicalTokens);
 }
-

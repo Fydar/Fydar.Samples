@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace Fydar.Samples.Formatting.CSharpFormatting.Internal;
+namespace Fydar.Samples.Grammars.CSharp.Internal;
 
 internal class CSharpCodeStyles
 {
