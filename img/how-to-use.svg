@@ -1,4 +1,4 @@
-<svg viewBox="0 0 1200 309" width="1200" height="309" xmlns ="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 1200 288" width="1200" height="288" xmlns ="http://www.w3.org/2000/svg">
 
 	<defs>
 		<clipPath id="round-left-corners">
@@ -6,10 +6,10 @@
 		</clipPath>
 	</defs>
 	<style>
-		.code { font: 17px Consolas; fill: rgba(220, 220, 220, 255); dominant-baseline: hanging; }
+		.code { font-size: 17px; font-family: Consolas, ui-monospace,SFMono-Regular,SF Mono,Menlo,Liberation Mono,monospace; fill: rgba(220, 220, 220, 255); dominant-baseline: hanging; }
 		.code-background { fill: #161b22; }
 		.code-background-linenumber { fill: #111418; }
-		.c-ln { font: 17px Consolas; fill: #2b90af; text-anchor: end; pointer-events: none; user-select: none; dominant-baseline: hanging; }
+		.c-ln { font-size: 17px; font-family: Consolas, ui-monospace,SFMono-Regular,SF Mono,Menlo,Liberation Mono,monospace; fill: #2b90af; text-anchor: end; pointer-events: none; user-select: none; dominant-baseline: hanging; }
 		.c-keyword { fill: rgba(86, 156, 214, 255); }
 		.c-control { fill: rgba(216, 160, 223, 255); }
 		.c-string { fill: rgba(214, 157, 133, 255); }
@@ -43,17 +43,15 @@
 	<text x="38" y="220" class="c-ln">11</text>
 	<text x="38" y="241" class="c-ln">12</text>
 	<text x="38" y="262" class="c-ln">13</text>
-	<text x="38" y="283" class="c-ln">14</text>
 	<text x="64" y="10" class="code"><tspan class="c-keyword">var</tspan> <tspan class="c-local">sampleProject</tspan> = <tspan class="c-class">SampleProject</tspan>.<tspan class="c-method">Create</tspan>()</text>
 	<text x="64" y="31" class="code">    .<tspan class="c-method">AddFormattedSamples</tspan>(<tspan class="c-parameter">options</tspan> <tspan class="c-method">=&gt;</tspan></text>
 	<text x="64" y="52" class="code">    {</text>
-	<text x="64" y="73" class="code">        <tspan class="c-parameter">options</tspan>.<tspan class="c-method">AddSource</tspan>(<tspan class="c-keyword">new</tspan> <tspan class="c-class">FileSystemSource</tspan>(<tspan class="c-string">"Samples"</tspan>));</text>
-	<text x="64" y="94" class="code">        <tspan class="c-parameter">options</tspan>.<tspan class="c-method">AddSource</tspan>(<tspan class="c-keyword">new</tspan> <tspan class="c-class">SampleReturnSampleSource</tspan>(<tspan class="c-class">Assembly</tspan>.<tspan class="c-method">GetEntryAssembly</tspan>()));</text>
-	<text x="64" y="136" class="code">        <tspan class="c-parameter">options</tspan>.<tspan class="c-method">AddFormatter</tspan>(<tspan class="c-keyword">new</tspan> <tspan class="c-class">CSharpSampleFormatter</tspan>());</text>
-	<text x="64" y="157" class="code">        <tspan class="c-parameter">options</tspan>.<tspan class="c-method">AddFormatter</tspan>(<tspan class="c-keyword">new</tspan> <tspan class="c-class">JsonSampleFormatter</tspan>());</text>
+	<text x="64" y="73" class="code">        <tspan class="c-parameter">options</tspan>.<tspan class="c-method">AddSource</tspan>(<tspan class="c-keyword">new</tspan> <tspan class="c-class">FileSystemSampleContentLibrary</tspan>(<tspan class="c-string">"Samples"</tspan>));</text>
+	<text x="64" y="94" class="code">        <tspan class="c-parameter">options</tspan>.<tspan class="c-method">AddSource</tspan>(<tspan class="c-keyword">new</tspan> <tspan class="c-class">SampleReturnContentLibrary</tspan>(<tspan class="c-class">Assembly</tspan>.<tspan class="c-method">GetEntryAssembly</tspan>()));</text>
+	<text x="64" y="136" class="code">        <tspan class="c-parameter">options</tspan>.<tspan class="c-method">AddFormatter</tspan>(<tspan class="c-string">".cs"</tspan>, <tspan class="c-keyword">new</tspan> <tspan class="c-class">CSharpSampleFormatter</tspan>());</text>
+	<text x="64" y="157" class="code">        <tspan class="c-parameter">options</tspan>.<tspan class="c-method">AddFormatter</tspan>(<tspan class="c-string">".json"</tspan>, <tspan class="c-keyword">new</tspan> <tspan class="c-class">JsonSampleFormatter</tspan>());</text>
 	<text x="64" y="178" class="code">    })</text>
-	<text x="64" y="199" class="code">    .<tspan class="c-method">AddFrom</tspan>(<tspan class="c-keyword">new</tspan> <tspan class="c-class">ConsoleOutputSampleGenerator</tspan>())</text>
-	<text x="64" y="220" class="code">    .<tspan class="c-method">RenderTo</tspan>(<tspan class="c-keyword">new</tspan> <tspan class="c-class">SvgSampleRenderer</tspan>())</text>
-	<text x="64" y="241" class="code">    .<tspan class="c-method">Build</tspan>();</text>
-	<text x="64" y="283" class="code"><tspan class="c-keyword">await</tspan> <tspan class="c-local">sampleProject</tspan>.<tspan class="c-method">GenerateSamplesAsync</tspan>(<tspan class="c-string">"output"</tspan>);</text>
+	<text x="64" y="199" class="code">    .<tspan class="c-method">RenderTo</tspan>(<tspan class="c-keyword">new</tspan> <tspan class="c-class">SvgSampleRenderer</tspan>())</text>
+	<text x="64" y="220" class="code">    .<tspan class="c-method">Build</tspan>();</text>
+	<text x="64" y="262" class="code"><tspan class="c-keyword">await</tspan> <tspan class="c-local">sampleProject</tspan>.<tspan class="c-method">GenerateSamplesAsync</tspan>(<tspan class="c-string">"output"</tspan>);</text>
 </svg>

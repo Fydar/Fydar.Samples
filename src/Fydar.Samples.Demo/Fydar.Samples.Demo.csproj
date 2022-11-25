@@ -3,14 +3,16 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
     <OutputType>Exe</OutputType>
+
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Fydar.Samples\Fydar.Samples.csproj" />
     <ProjectReference Include="..\Fydar.Samples.Grammars.CSharp\Fydar.Samples.Grammars.CSharp.csproj" />
     <ProjectReference Include="..\Fydar.Samples.Grammars.Json\Fydar.Samples.Grammars.Json.csproj" />
-    <ProjectReference Include="..\Fydar.Samples.Rendering.ToSvg\Fydar.Samples.Rendering.ToSvg.csproj" />
   </ItemGroup>
 
   <ItemGroup>

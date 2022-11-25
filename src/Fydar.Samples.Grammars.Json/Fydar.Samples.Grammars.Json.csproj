@@ -1,11 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
-    <Product>Fydar.Samples.Json</Product>
-    <PackageId>Fydar.Samples.Json</PackageId>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Product>Fydar.Samples.Grammars.Json</Product>
+    <PackageId>Fydar.Samples.Grammars.Json</PackageId>
     <VersionPrefix>0.0.1</VersionPrefix>
     <VersionSuffix>alpha</VersionSuffix>
   </PropertyGroup>

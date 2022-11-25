@@ -6,10 +6,10 @@
 		</clipPath>
 	</defs>
 	<style>
-		.code { font: 17px Consolas; fill: rgba(220, 220, 220, 255); dominant-baseline: hanging; }
+		.code { font-size: 17px; font-family: Consolas, ui-monospace,SFMono-Regular,SF Mono,Menlo,Liberation Mono,monospace; fill: rgba(220, 220, 220, 255); dominant-baseline: hanging; }
 		.code-background { fill: #161b22; }
 		.code-background-linenumber { fill: #111418; }
-		.c-ln { font: 17px Consolas; fill: #2b90af; text-anchor: end; pointer-events: none; user-select: none; dominant-baseline: hanging; }
+		.c-ln { font-size: 17px; font-family: Consolas, ui-monospace,SFMono-Regular,SF Mono,Menlo,Liberation Mono,monospace; fill: #2b90af; text-anchor: end; pointer-events: none; user-select: none; dominant-baseline: hanging; }
 		.c-keyword { fill: rgba(86, 156, 214, 255); }
 		.c-control { fill: rgba(216, 160, 223, 255); }
 		.c-string { fill: rgba(214, 157, 133, 255); }

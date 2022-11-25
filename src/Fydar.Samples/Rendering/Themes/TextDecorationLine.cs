@@ -6,7 +6,10 @@ namespace Fydar.Samples.Rendering.Themes;
 public enum TextDecorationLine
 {
 	None,
+
 	Underline,
+
 	Overline,
+
 	LineThrough
 }

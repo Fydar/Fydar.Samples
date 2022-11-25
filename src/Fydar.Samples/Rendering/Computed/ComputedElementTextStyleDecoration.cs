@@ -1,6 +1,6 @@
 ﻿using Fydar.Samples.Rendering.Themes;
 
-namespace Fydar.Samples.Rendering.ComputedElements;
+namespace Fydar.Samples.Rendering.Computed;
 
 public class ComputedElementTextStyleDecoration
 {

@@ -2,20 +2,20 @@
 
 public class ThemeFontSpanStyle
 {
-	public string? InheritFrom { get; init; }
+	public string? InheritFrom { get; set; }
 
 	/// <summary>
 	/// A string (typically hexadecimal) used to describe the foreground color of the text.
 	/// </summary>
-	public string? FontColor { get; init; }
+	public string? FontColor { get; set; }
 
-	public string? FontWeight { get; init; }
+	public string? FontWeight { get; set; }
 
-	public FontStyle? FontStyle { get; init; }
+	public FontStyle? FontStyle { get; set; }
 
-	public TextDecorationStyle? TextDecorationStyle { get; init; }
+	public TextDecorationStyle? TextDecorationStyle { get; set; }
 
-	public TextDecorationLine? TextDecorationLine { get; init; }
+	public TextDecorationLine? TextDecorationLine { get; set; }
 
-	public string? TextDecorationColor { get; init; }
+	public string? TextDecorationColor { get; set; }
 }

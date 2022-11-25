@@ -1,4 +1,4 @@
-﻿namespace Fydar.Samples.Grammars;
+﻿namespace Fydar.Samples.Grammars.CSharp;
 
 public static class CSharpToken
 {

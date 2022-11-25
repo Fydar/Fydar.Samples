@@ -1,7 +1,7 @@
-﻿using Fydar.Samples.Formatting;
-using Fydar.Samples.Formatting.CSharpFormatting;
-using Fydar.Samples.Rendering.ToSvg;
-using System.Reflection;
+﻿using Fydar.Samples.CodeSnippets;
+using Fydar.Samples.Grammars.CSharp;
+using Fydar.Samples.Grammars.Json;
+using Fydar.Samples.Themes.VisualStudio2022Dark;
 using System.Threading.Tasks;
 
 namespace Fydar.Samples.Demo.Samples;
@@ -11,19 +11,30 @@ public class HowToUse
 	public static async Task Demo()
 	{
 		#region how_to_use
-		var sampleProject = SampleProject.Create()
-			.AddFormattedSamples(options =>
+		var sampleProject = SampleProject.Create(project =>
+		{
+			project.Grammars.AddCSharp();
+			project.Grammars.AddJson();
+
+			project.Samples.AddFromSourceFiles("Samples/");
+			project.Samples.AddMethodReturns();
+
+			project.Rendering.Configure<CodeSnippet>(render =>
 			{
-				options.AddSource(new FileSystemSampleContentLibrary("Samples"));
-				options.AddSource(new SampleReturnContentLibrary(Assembly.GetEntryAssembly()));
+				render.Layout.UseCodeSnippet(render.Model);
+				render.Theme.UseVisualStudio2022Dark();
+			});
 
-				options.AddGrammar(".cs", new CSharpSampleFormatter());
-				options.AddGrammar(".json", new JsonSampleFormatter());
-			})
-			.RenderTo(new SvgSampleRenderer())
-			.Build();
+			project.Exporter.AddExport(export =>
+			{
+				export.Format.AsSvg();
+				export.To.Directory("output/svg/");
 
-		await sampleProject.GenerateSamplesAsync("output");
+				export.UpdateMarkdownHyperlinks();
+			});
+		});
+
+		await sampleProject.ExportAsync();
 		#endregion how_to_use
 	}
 }

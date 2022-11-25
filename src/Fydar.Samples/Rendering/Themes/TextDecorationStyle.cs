@@ -3,9 +3,14 @@
 public enum TextDecorationStyle
 {
 	None,
+
 	Solid,
+
 	Double,
+
 	Dotted,
+
 	Dashed,
+
 	Wavy
 }

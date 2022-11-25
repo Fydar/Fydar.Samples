@@ -1,28 +1,20 @@
-﻿using Fydar.Samples.Rendering;
-using System.Collections.Generic;
+﻿using Fydar.Samples.Grammars;
+using Fydar.Samples.Rendering;
 
 namespace Fydar.Samples.Internal;
 
 internal class SampleProjectBuilder : ISampleProjectBuilder
 {
-	private readonly List<ISampleLibrary> sampleLibraries = new();
-	private readonly List<ISampleRenderer> sampleRenderers = new();
+	public IGrammarLibraryBuilder Grammars { get; }
 
-	public ISampleProjectBuilder AddSampleLibrary(ISampleLibrary sampleGenerator)
-	{
-		sampleLibraries.Add(sampleGenerator);
-		return this;
-	}
+	public ISampleModelLibraryBuilder Samples { get; }
 
-	public ISampleProjectBuilder RenderTo(ISampleRenderer sampleRenderer)
-	{
-		sampleRenderers.Add(sampleRenderer);
-		return this;
-	}
+	public ISampleRenderingLibraryBuilder Rendering { get; }
+
+	public ISampleExporterBuilder Exporter { get; }
 
 	public SampleProject Build()
 	{
-		return null;
-		// return new SampleProject(sampleLibraries.ToArray(), sampleRenderers.ToArray());
+		return new SampleProject();
 	}
 }

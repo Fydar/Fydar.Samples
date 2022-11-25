@@ -2,7 +2,7 @@
 using Fydar.Samples.Rendering.Themes;
 using System;
 
-namespace Fydar.Samples.Rendering.ComputedElements;
+namespace Fydar.Samples.Rendering.Computed;
 
 public class ComputedViewport : IComputedElement
 {

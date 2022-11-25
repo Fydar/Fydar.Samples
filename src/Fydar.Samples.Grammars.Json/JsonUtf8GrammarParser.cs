@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fydar.Samples.Grammars.Syntax;
+using System;
 
 namespace Fydar.Samples.Grammars.Json;
 
