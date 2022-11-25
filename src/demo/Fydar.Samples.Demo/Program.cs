@@ -28,8 +28,6 @@ internal class Program
 			{
 				export.Format.AsSvg();
 				export.To.Directory("output/svg/");
-
-				export.UpdateMarkdownHyperlinks();
 			});
 		});
 

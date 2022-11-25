@@ -18,20 +18,6 @@
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
-  <!-- Icon -->
-  <PropertyGroup>
-    <PackageIcon>icon.png</PackageIcon>
-    <PackageIconUrl>https://raw.githubusercontent.com/Fydar/Samples/main/src/$(MSBuildProjectName)/icon.png</PackageIconUrl>
-  </PropertyGroup>
-
-  <ItemGroup Condition=" '$(IsPackable)' == 'true' ">
-    <None Include="$(MSBuildThisFileDirectory)$(MSBuildProjectName)/icon.png">
-      <Pack>true</Pack>
-      <PackagePath>/$(PackageIcon)</PackagePath>
-      <Visible>false</Visible>
-    </None>
-  </ItemGroup>
-
   <!-- Output -->
   <PropertyGroup>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>

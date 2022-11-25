@@ -1,11 +1,11 @@
-﻿using System.IO;
+﻿/*using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
 
 namespace Fydar.Samples.Format.AsSvg;
 
-public class SvgSampleRenderer : ISampleRenderer
+public class SvgSampleFormatter : ISampleFormatter
 {
 	public string Extension => ".svg";
 
@@ -113,3 +113,4 @@ public class SvgSampleRenderer : ISampleRenderer
 		return node.InnerXml;
 	}
 }
+*/

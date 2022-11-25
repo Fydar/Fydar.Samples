@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+
+  <!-- Icon -->
+  <PropertyGroup>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageIconUrl>https://raw.githubusercontent.com/Fydar/Samples/main/src/$(MSBuildProjectName)/icon.png</PackageIconUrl>
+  </PropertyGroup>
+
+  <ItemGroup Condition=" '$(IsPackable)' == 'true' ">
+    <None Include="$(MSBuildThisFileDirectory)$(MSBuildProjectName)/icon.png">
+      <Pack>true</Pack>
+      <PackagePath>/$(PackageIcon)</PackagePath>
+      <Visible>false</Visible>
+    </None>
+  </ItemGroup>
+  
+</Project>
