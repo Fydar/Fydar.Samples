@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Fydar.Samples.Grammars.Json\Fydar.Samples.Grammars.Json.csproj" />
+    <ProjectReference Include="..\..\libs\Fydar.Samples.Grammars.Json\Fydar.Samples.Grammars.Json.csproj" />
   </ItemGroup>
 
   <ItemGroup>

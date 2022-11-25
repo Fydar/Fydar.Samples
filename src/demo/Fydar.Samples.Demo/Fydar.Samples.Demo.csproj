@@ -10,9 +10,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Fydar.Samples\Fydar.Samples.csproj" />
-    <ProjectReference Include="..\Fydar.Samples.Grammars.CSharp\Fydar.Samples.Grammars.CSharp.csproj" />
-    <ProjectReference Include="..\Fydar.Samples.Grammars.Json\Fydar.Samples.Grammars.Json.csproj" />
+    <ProjectReference Include="..\..\libs\Fydar.Samples\Fydar.Samples.csproj" />
+    <ProjectReference Include="..\..\libs\Fydar.Samples.Grammars.CSharp\Fydar.Samples.Grammars.CSharp.csproj" />
+    <ProjectReference Include="..\..\libs\Fydar.Samples.Grammars.Json\Fydar.Samples.Grammars.Json.csproj" />
   </ItemGroup>
 
   <ItemGroup>
