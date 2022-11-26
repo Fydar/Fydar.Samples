@@ -1,12 +1,39 @@
 # Remove the line below if you want to inherit .editorconfig settings from higher directories
 root = true
 
-# Yaml Files
-[*.yml]
+[*]
+charset = utf-8
+
+# New line preferences
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Indentation and spacing
+indent_style = space
+indent_size = 4
+tab_width = 4
+
+# Html Files
+[*.html]
+
+# New line preferences
+insert_final_newline = true
 
 # Indentation and spacing
 indent_style = space
 indent_size = 2
+tab_width = 2
+
+# Yaml Files
+[*.yml]
+
+# New line preferences
+insert_final_newline = true
+
+# Indentation and spacing
+indent_style = space
+indent_size = 2
+tab_width = 2
 
 # Json Files
 [*.json]
@@ -14,20 +41,29 @@ indent_size = 2
 # Indentation and spacing
 indent_style = space
 indent_size = 2
+tab_width = 2
 
 # Xml Files
-[*.xml]
+[*.{xml,csproj,targets}]
+
+# New line preferences
+insert_final_newline = true
 
 # Indentation and spacing
 indent_style = space
 indent_size = 2
+tab_width = 2
 
-# Html Files
-[*.html]
+[*.sln]
+
+# New line preferences
+end_of_line = crlf
+insert_final_newline = true
 
 # Indentation and spacing
-indent_style = space
-indent_size = 2
+indent_style = tab
+indent_size = 4
+tab_width = 4
 
 #### .NET Coding Conventions ####
 [*.{cs,vb}]
@@ -35,8 +71,8 @@ indent_size = 2
 file_header_template = unset
 
 # Indentation and spacing
-indent_size = 4
 indent_style = tab
+indent_size = 4
 tab_width = 4
 
 # New line preferences
@@ -115,35 +151,35 @@ dotnet_naming_rule.type_parameter_should_be_beings_with_t.style = beings_with_t
 
 dotnet_naming_symbols.interface.applicable_kinds = interface
 dotnet_naming_symbols.interface.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
-dotnet_naming_symbols.interface.required_modifiers = 
+dotnet_naming_symbols.interface.required_modifiers =
 
 dotnet_naming_symbols.types.applicable_kinds = class, struct, interface, enum
 dotnet_naming_symbols.types.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
-dotnet_naming_symbols.types.required_modifiers = 
+dotnet_naming_symbols.types.required_modifiers =
 
 dotnet_naming_symbols.non_field_members.applicable_kinds = property, event, method
 dotnet_naming_symbols.non_field_members.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
-dotnet_naming_symbols.non_field_members.required_modifiers = 
+dotnet_naming_symbols.non_field_members.required_modifiers =
 
 dotnet_naming_symbols.type_parameter.applicable_kinds = type_parameter
 dotnet_naming_symbols.type_parameter.applicable_accessibilities = *
-dotnet_naming_symbols.type_parameter.required_modifiers = 
+dotnet_naming_symbols.type_parameter.required_modifiers =
 
 # Naming styles
 
-dotnet_naming_style.pascal_case.required_prefix = 
-dotnet_naming_style.pascal_case.required_suffix = 
-dotnet_naming_style.pascal_case.word_separator = 
+dotnet_naming_style.pascal_case.required_prefix =
+dotnet_naming_style.pascal_case.required_suffix =
+dotnet_naming_style.pascal_case.word_separator =
 dotnet_naming_style.pascal_case.capitalization = pascal_case
 
 dotnet_naming_style.begins_with_i.required_prefix = I
-dotnet_naming_style.begins_with_i.required_suffix = 
-dotnet_naming_style.begins_with_i.word_separator = 
+dotnet_naming_style.begins_with_i.required_suffix =
+dotnet_naming_style.begins_with_i.word_separator =
 dotnet_naming_style.begins_with_i.capitalization = pascal_case
 
 dotnet_naming_style.beings_with_t.required_prefix = T
-dotnet_naming_style.beings_with_t.required_suffix = 
-dotnet_naming_style.beings_with_t.word_separator = 
+dotnet_naming_style.beings_with_t.required_suffix =
+dotnet_naming_style.beings_with_t.word_separator =
 dotnet_naming_style.beings_with_t.capitalization = pascal_case
 
 #### C# Coding Conventions ####
@@ -179,7 +215,7 @@ csharp_style_pattern_matching_over_as_with_null_check = true:suggestion
 csharp_style_pattern_matching_over_is_with_cast_check = true:suggestion
 csharp_style_prefer_extended_property_pattern = true:suggestion
 csharp_style_prefer_not_pattern = true:suggestion
-csharp_style_prefer_pattern_matching = true:silent
+csharp_style_prefer_pattern_matching = false:silent
 csharp_style_prefer_switch_expression = true:suggestion
 
 # Null-checking preferences

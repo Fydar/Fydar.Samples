@@ -1,4 +1,4 @@
-﻿namespace Fydar.Samples.Lexing;
+﻿namespace Fydar.Samples.Grammars.Json.Lexing;
 
 public static class Utf8CharUtilities
 {
