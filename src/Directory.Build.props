@@ -18,12 +18,18 @@
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <Features>strict</Features>
+    <RestoreConfigFile>$(MSBuildThisFileDirectory)NuGet.config</RestoreConfigFile>
+    <HighEntropyVA>true</HighEntropyVA>
+  </PropertyGroup>
+
   <!-- Output -->
   <PropertyGroup>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <OverwriteReadOnlyFiles>true</OverwriteReadOnlyFiles>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
-    <GenerateFullPaths Condition="'$(TERM_PROGRAM)' == 'vscode'">true</GenerateFullPaths>
+    <UseSharedCompilation>true</UseSharedCompilation>
 
     <BaseArtifactsPath>$(MSBuildThisFileDirectory)../artifacts/</BaseArtifactsPath>
     <BaseArtifactsPathSuffix>$(MSBuildProjectName)</BaseArtifactsPathSuffix>

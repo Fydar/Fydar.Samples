@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project>
 
+  <Import Project="$(MSBuildThisFileDirectory)..\Directory.Build.props" />
+  
+  <PropertyGroup>
+    <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+    <IsTrimmable>true</IsTrimmable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="$(MSBuildProjectName).UnitTests" />
+  </ItemGroup>
+
   <!-- Icon -->
   <PropertyGroup>
     <PackageIcon>icon.png</PackageIcon>
-    <PackageIconUrl>https://raw.githubusercontent.com/Fydar/Samples/main/src/$(MSBuildProjectName)/icon.png</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/Fydar/Samples/main/src/libs/$(MSBuildProjectName)/icon.png</PackageIconUrl>
   </PropertyGroup>
 
   <ItemGroup Condition=" '$(IsPackable)' == 'true' ">
