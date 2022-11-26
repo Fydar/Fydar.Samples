@@ -1,8 +1,18 @@
 <h1>
-📦 Fydar.Samples
+  <img src="./src/libs/Fydar.Samples/icon.png" width="60" height="60" align="left" />
+  Fydar.Samples
 </h1>
 
 **Fydar.Samples** is a library for maintaining code samples and generating documentation for **C#**.
+
+<p align="center">
+  <a href="/src/libs/Fydar.Samples"><img src="./src/libs/Fydar.Samples/icon.png" width="90" height="90" align="center" /></a>
+</p>
+
+<p align="center">
+  <a href="/src/libs/Fydar.Samples.Grammars.CSharp"><img src="./src/libs/Fydar.Samples.Grammars.CSharp/icon.png" width="44" height="44" align="center" /></a>
+  <a href="/src/libs/Fydar.Samples.Grammars.Json"><img src="./src/libs/Fydar.Samples.Grammars.Json/icon.png" width="44" height="44" align="center" /></a>
+</p>
 
 <p align="center">
   <img src="./img/how-to-use.svg" alt="A demo of how to use Fydar.Samples to generate samples."/>
