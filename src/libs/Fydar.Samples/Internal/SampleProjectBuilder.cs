@@ -1,4 +1,5 @@
-﻿using Fydar.Samples.Grammars;
+﻿using Fydar.Samples.Exporting.Internal;
+using Fydar.Samples.Grammars;
 using Fydar.Samples.Rendering;
 
 namespace Fydar.Samples.Internal;
@@ -12,6 +13,14 @@ internal class SampleProjectBuilder : ISampleProjectBuilder
 	public ISampleRenderingLibraryBuilder Rendering { get; }
 
 	public ISampleExporterBuilder Exporter { get; }
+
+	internal SampleProjectBuilder()
+	{
+		Grammars = GrammarLibrary.Create();
+		Samples = SampleModelLibrary.Create();
+		Rendering = SampleRenderingLibrary.Create();
+		Exporter = SampleExporter.Create();
+	}
 
 	public SampleProject Build()
 	{

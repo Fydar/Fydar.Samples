@@ -4,7 +4,7 @@ using System.Diagnostics;
 namespace Fydar.Samples.Grammars.Syntax.Internal;
 
 [DebuggerDisplay("{DebuggerDisplay,nq}")]
-internal struct DebuggerViewGrammarTokenCollection
+internal readonly struct DebuggerViewGrammarTokenCollection
 {
 	[DebuggerBrowsable(DebuggerBrowsableState.RootHidden)]
 	private readonly GrammarToken[] tokens;

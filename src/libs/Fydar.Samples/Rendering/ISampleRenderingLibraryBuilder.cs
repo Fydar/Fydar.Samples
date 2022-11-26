@@ -1,5 +1,4 @@
-﻿using Fydar.Samples.Rendering.Internal;
-using System;
+﻿using System;
 
 namespace Fydar.Samples.Rendering;
 

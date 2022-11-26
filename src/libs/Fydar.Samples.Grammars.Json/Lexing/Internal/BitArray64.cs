@@ -1,4 +1,4 @@
-﻿namespace Fydar.Samples.Lexing.Internal;
+﻿namespace Fydar.Samples.Grammars.Json.Lexing.Internal;
 
 internal struct BitArray64
 {

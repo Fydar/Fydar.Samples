@@ -1,4 +1,4 @@
-﻿namespace Fydar.Samples.Lexing;
+﻿namespace Fydar.Samples.Grammars.Json.Lexing;
 
 /// <summary>
 /// A language used to classify spans of text.

@@ -92,7 +92,7 @@ public class RenderBlock
 		}
 
 		byte a = byte.MaxValue;
-		if (data.Length == 3 || data.Length == 4)
+		if (data.Length is 3 or 4)
 		{
 			byte r = DoubleHex(data[1]);
 			byte g = DoubleHex(data[2]);
@@ -104,7 +104,7 @@ public class RenderBlock
 			}
 			return new Color32(r, g, b, a);
 		}
-		else if (data.Length == 7 || data.Length == 9)
+		else if (data.Length is 7 or 9)
 		{
 			byte r = ParseHex(data[1], data[2]);
 			byte g = ParseHex(data[3], data[4]);

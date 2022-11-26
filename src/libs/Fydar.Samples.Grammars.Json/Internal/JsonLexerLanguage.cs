@@ -1,5 +1,5 @@
 ﻿using Fydar.Samples.Grammars.Json.Internal.Classifiers;
-using Fydar.Samples.Lexing;
+using Fydar.Samples.Grammars.Json.Lexing;
 
 namespace Fydar.Samples.Grammars.Json.Internal;
 
