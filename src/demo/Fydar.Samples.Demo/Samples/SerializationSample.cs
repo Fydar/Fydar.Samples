@@ -11,7 +11,7 @@ public class SerializationSample
 	{
 		public DateTimeOffset Date { get; set; }
 		public int TemperatureCelsius { get; set; }
-		public string Summary { get; set; }
+		public string? Summary { get; set; }
 	}
 	#endregion serialization_model
 

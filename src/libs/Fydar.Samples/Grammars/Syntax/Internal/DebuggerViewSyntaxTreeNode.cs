@@ -4,7 +4,7 @@ using System.Diagnostics;
 namespace Fydar.Samples.Grammars.Syntax.Internal;
 
 [DebuggerDisplay("{Kind,nq}")]
-internal struct DebuggerViewSyntaxTreeNode
+internal readonly struct DebuggerViewSyntaxTreeNode
 {
 	public TokenKind Kind { get; }
 

@@ -2,7 +2,6 @@ using Fydar.Samples.Grammars.Syntax;
 using NUnit.Framework;
 using System;
 using System.Text;
-using System.Text.Json;
 
 namespace Fydar.Samples.Grammars.Json.UnitTests;
 
@@ -32,7 +31,7 @@ public class GrammerParsingShould
 		// 
 		// byte[] jsonBytes = JsonSerializer.SerializeToUtf8Bytes(weatherForecast, options);
 
-		var json = """
+		string json = """
 // An example glossery of markup languages
 {
 	"glossary": {
@@ -63,7 +62,7 @@ public class GrammerParsingShould
 	}
 }
 """;
-		var jsonBytes = Encoding.UTF8.GetBytes(json);
+		byte[] jsonBytes = Encoding.UTF8.GetBytes(json);
 
 		var grammerLexer = new JsonUtf8GrammarLexer();
 		var lexicalTokens = grammerLexer.Tokenize(jsonBytes);
@@ -119,7 +118,7 @@ public class GrammerParsingShould
 		// 
 		// byte[] jsonBytes = JsonSerializer.SerializeToUtf8Bytes(weatherForecast, options);
 
-		var json = """
+		string json = """
 // An example glossery of markup languages
 {
 	"glossary": {
@@ -150,7 +149,7 @@ public class GrammerParsingShould
 	}
 }
 """;
-		var jsonBytes = Encoding.UTF8.GetBytes(json);
+		byte[] jsonBytes = Encoding.UTF8.GetBytes(json);
 
 		var grammerLexer = new JsonUtf8GrammarLexer();
 		var lexicalTokens = grammerLexer.Tokenize(jsonBytes);

@@ -10,5 +10,5 @@ public class GrammarOptions
 
 	public string[] Extensions { get; set; } = Array.Empty<string>();
 
-	public IUtf8GrammarLexer Syntax { get; set; }
+	public IUtf8GrammarLexer? Syntax { get; set; }
 }

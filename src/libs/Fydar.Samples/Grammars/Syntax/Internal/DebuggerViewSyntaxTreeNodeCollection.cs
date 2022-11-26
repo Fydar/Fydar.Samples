@@ -3,7 +3,7 @@
 namespace Fydar.Samples.Grammars.Syntax.Internal;
 
 [DebuggerDisplay("Count = {Count,nq}")]
-internal struct DebuggerViewSyntaxTreeNodeCollection
+internal readonly struct DebuggerViewSyntaxTreeNodeCollection
 {
 	[DebuggerBrowsable(DebuggerBrowsableState.RootHidden)]
 	private readonly DebuggerViewSyntaxTreeNode[] nodes;

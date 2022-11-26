@@ -1,7 +1,6 @@
-﻿using Fydar.Samples.Grammars;
-using System;
+﻿using System;
 
-namespace Fydar.Samples.Lexing;
+namespace Fydar.Samples.Grammars.Json.Lexing;
 
 /// <summary>
 /// A lexer used to classify spans of text using an <see cref="IUtf8LexerLanguage"/>.

@@ -16,4 +16,11 @@ public class Grammar
 	public ReadOnlySpan<string> Aliases => aliases;
 
 	public ReadOnlySpan<string> Extensions => extensions;
+
+	internal Grammar(string[] aliases, string[] extensions, string displayName)
+	{
+		this.aliases = aliases;
+		this.extensions = extensions;
+		DisplayName = displayName;
+	}
 }

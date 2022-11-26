@@ -2,7 +2,7 @@
 
 namespace Fydar.Samples.Grammars;
 
-public struct TokenKind
+public readonly struct TokenKind
 {
 	public static readonly TokenKind Unknown;
 

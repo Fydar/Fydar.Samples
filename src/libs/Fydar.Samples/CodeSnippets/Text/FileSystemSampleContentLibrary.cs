@@ -24,7 +24,7 @@ public class FileSystemSampleContentLibrary : ISampleContentLibrary
 			yield return new SampleContent(
 				fileInfo.Name,
 				fileInfo.Extension,
-				() => fileInfo.OpenRead());
+				fileInfo.OpenRead);
 		}
 	}
 }

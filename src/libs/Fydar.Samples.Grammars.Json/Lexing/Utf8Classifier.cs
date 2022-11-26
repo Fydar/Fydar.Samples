@@ -1,7 +1,6 @@
-﻿using Fydar.Samples.Grammars;
-using Fydar.Samples.Lexing.Internal;
+﻿using Fydar.Samples.Grammars.Json.Lexing.Internal;
 
-namespace Fydar.Samples.Lexing;
+namespace Fydar.Samples.Grammars.Json.Lexing;
 
 /// <summary>
 /// The interface that an <see cref="IUtf8TokenClassifier"/> has to interact with the <see cref="Utf8Lexer"/>.

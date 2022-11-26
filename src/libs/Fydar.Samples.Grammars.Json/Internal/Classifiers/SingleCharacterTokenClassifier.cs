@@ -1,4 +1,4 @@
-﻿using Fydar.Samples.Lexing;
+﻿using Fydar.Samples.Grammars.Json.Lexing;
 using System;
 using System.Text;
 
