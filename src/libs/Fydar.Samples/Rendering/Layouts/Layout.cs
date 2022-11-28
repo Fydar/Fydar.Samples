@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 
 namespace Fydar.Samples.Rendering.Layouts;
 
@@ -7,15 +7,5 @@ public class Layout
 	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	private readonly ILayoutElement rootElement;
 
-	public ILayoutElement RootElement => rootElement;
-
-	internal Layout(LayoutBuilderOptions layoutBuilderOptions)
-	{
-		rootElement = layoutBuilderOptions.RootElement.Build();
-	}
-
-	public static LayoutBuilder Create()
-	{
-		return new LayoutBuilder();
-	}
+	public ILayoutElement RootElement { get; set; } = new LayoutVerticalStack(new string[0], new LayoutElementBuilder[0]);
 }

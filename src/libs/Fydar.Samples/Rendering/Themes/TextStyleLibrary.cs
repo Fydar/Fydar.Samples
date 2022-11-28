@@ -1,4 +1,4 @@
-﻿using Fydar.Samples.Grammars;
+using Fydar.Samples.Grammars;
 using System;
 using System.Collections.Generic;
 
@@ -47,6 +47,7 @@ public class TextStyleLibrary
 
 		return computedStyle;
 	}
+
 	public ComputedTextStyle GetComputedTextStyle(TokenKind tokenKind, TokenKind nodeKind)
 	{
 		var computedStyle = new ComputedTextStyle();

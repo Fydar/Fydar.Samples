@@ -1,6 +1,6 @@
-﻿using Fydar.Samples.Grammars.Syntax;
+using Fydar.Samples.BuiltIn.Themes.VisualStudio2022Dark;
+using Fydar.Samples.Grammars.Syntax;
 using Fydar.Samples.Rendering.Themes;
-using Fydar.Samples.Themes.VisualStudio2022Dark;
 using System.Drawing;
 using System.Text;
 
@@ -23,13 +23,13 @@ internal class Program
 			.UseVisualStudio2022Dark()
 			.Build();
 
-		var backgroundColor32 = RenderBlock.ParseHexColor("#1e1e1e");
-		Console.BackgroundColor = Color.FromArgb(backgroundColor32.a, backgroundColor32.r, backgroundColor32.g, backgroundColor32.b);
+		var backgroundColor32 = ThemeColor.ParseHexColor("#1e1e1e");
+		Console.BackgroundColor = Color.FromArgb(backgroundColor32.A, backgroundColor32.R, backgroundColor32.G, backgroundColor32.B);
 		Console.Clear();
 
 		var foregroundColor = theme.TextStyleLibrary.GetComputedTextStyle(StandardToken.Identifier);
-		var foregroundColor32 = RenderBlock.ParseHexColor(foregroundColor.Color);
-		Console.ForegroundColor = Color.FromArgb(foregroundColor32.a, foregroundColor32.r, foregroundColor32.g, foregroundColor32.b);
+		var foregroundColor32 = ThemeColor.ParseHexColor(foregroundColor.Color);
+		Console.ForegroundColor = Color.FromArgb(foregroundColor32.A, foregroundColor32.R, foregroundColor32.G, foregroundColor32.B);
 
 		Console.WriteLine("");
 		Console.WriteLine(" ╔══ [Fydar.Samples.Grammars.Json.Demo] ════════════════════════════╗");

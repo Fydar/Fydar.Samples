@@ -1,4 +1,4 @@
-﻿using Fydar.Samples.CodeSnippets;
+using Fydar.Samples.BuiltIn.CodeSnippets;
 using System;
 using System.Text.Json;
 

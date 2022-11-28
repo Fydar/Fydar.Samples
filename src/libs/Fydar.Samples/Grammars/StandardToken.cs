@@ -38,7 +38,7 @@ public static class StandardToken
 	/// <summary>
 	/// A token that represents a keyword across multiple languages.
 	/// </summary>
-	public static readonly TokenKindName KeywordControl = new("keyword-onctrol", "kwc");
+	public static readonly TokenKindName KeywordControl = new("keyword-control", "kwc");
 
 	/// <summary>
 	/// A token that represents a string across multiple languages.
