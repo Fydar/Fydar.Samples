@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 
 namespace Fydar.Samples.Rendering.Layouts;
@@ -14,17 +14,5 @@ public class LayoutHorizontalStack : ILayoutElement
 		Elements = elements
 			.Select(e => e.Build())
 			.ToArray();
-	}
-
-	public static LayoutHorizontalStackBuilder New()
-	{
-		return new LayoutHorizontalStackBuilder();
-	}
-
-	public static LayoutHorizontalStackBuilder New(Action<LayoutHorizontalStackBuilder> construct)
-	{
-		var builder = new LayoutHorizontalStackBuilder();
-		construct.Invoke(builder);
-		return builder;
 	}
 }

@@ -1,16 +1,21 @@
-﻿namespace Fydar.Samples.Rendering.Themes;
+namespace Fydar.Samples.Rendering.Themes;
 
 public class Theme
 {
+	public string Name { get; }
+
 	public TextStyleLibrary TextStyleLibrary { get; }
 
-	internal Theme(TextStyleLibrary textStyleLibrary)
+	internal Theme(
+		string name,
+		TextStyleLibrary textStyleLibrary)
 	{
+		Name = name;
 		TextStyleLibrary = textStyleLibrary;
 	}
 
-	public static ThemeBuilder Create()
+	public static ThemeBuilder Create(string name)
 	{
-		return new ThemeBuilder();
+		return new ThemeBuilder(name);
 	}
 }

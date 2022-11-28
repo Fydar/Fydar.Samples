@@ -1,7 +1,10 @@
-﻿using Fydar.Samples.CodeSnippets;
-using Fydar.Samples.Grammars.CSharp;
-using Fydar.Samples.Grammars.Json;
-using Fydar.Samples.Themes.VisualStudio2022Dark;
+using Fydar.Samples.BuiltIn.CodeSnippets;
+using Fydar.Samples.BuiltIn.Themes.GitHubCodeSnippets;
+using Fydar.Samples.BuiltIn.Themes.VisualStudio2022Dark;
+using Fydar.Samples.Exporting;
+using Fydar.Samples.Rendering;
+using Fydar.Samples.Rendering.Format.AsSvg;
+using Fydar.Samples.Rendering.Themes;
 using System.Threading.Tasks;
 
 namespace Fydar.Samples.Demo.Samples;
@@ -11,30 +14,38 @@ public class HowToUse
 	public static async Task Demo()
 	{
 		#region how_to_use
-		var sampleProject = SampleProject.Create(project =>
+		// Collect code snippets that we want to generate samples for.
+		var sampleFactory = SampleFactory.Create(samples =>
 		{
-			project.Grammars.AddCSharp();
-			project.Grammars.AddJson();
+			samples.AddCodeSnippetsFromSourceFiles("Samples/");
+			samples.AddCodeSnippetsFromAttributes();
 
-			project.Samples.AddFromSourceFiles("Samples/");
-			project.Samples.AddMethodReturns();
-
-			project.Rendering.Configure<CodeSnippet>(render =>
-			{
-				render.Layout.UseCodeSnippet(render.Model);
-				render.Theme.UseVisualStudio2022Dark();
-			});
-
-			project.Exporter.AddExport(export =>
-			{
-				export.Format.AsSvg();
-				export.To.Directory("output/svg/");
-
-				export.UpdateMarkdownHyperlinks();
-			});
+			// samples.HighlightCSharpSyntax();
+			// samples.HighlightJsonSyntax();
 		});
 
-		await sampleProject.ExportAsync();
+		var layout = new DefaultCodeSnippetLayoutProvider();
+		var theme = Theme.Create("dark")
+			.UseVisualStudio2022Dark()
+			.UseGitHubCodeSnippetBoxDark()
+			.Build();
+
+		// Create a render stack to turn the samples into rendered graphics.
+		var graphicFactory = GraphicFactory.Create(graphic =>
+		{
+			graphic.Theme = theme;
+			graphic.LayoutProvider = layout;
+
+			graphic.CreatePermutationForEachRegion();
+		});
+
+		var exporter = RenderExporter.Create(export =>
+		{
+			export.To.GitRepositoryRootDirectory("output/");
+			export.Format.AsSvg();
+		});
+
+		await exporter.ExportAsync(sampleFactory, graphicFactory);
 		#endregion how_to_use
 	}
 }

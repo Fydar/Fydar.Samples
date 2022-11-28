@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Fydar.Samples.Rendering.Layouts;
 
@@ -11,17 +11,5 @@ public class LayoutText : ILayoutElement
 	{
 		Styles = styles;
 		Content = content;
-	}
-
-	public static LayoutTextBuilder New()
-	{
-		return new LayoutTextBuilder();
-	}
-
-	public static LayoutTextBuilder New(Action<LayoutTextBuilder> construct)
-	{
-		var builder = new LayoutTextBuilder();
-		construct.Invoke(builder);
-		return builder;
 	}
 }

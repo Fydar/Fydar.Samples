@@ -1,9 +1,14 @@
 ﻿namespace Fydar.Samples.Internal;
 
-internal class SampleModelLibraryBuilder : ISampleModelLibraryBuilder
+internal class SampleModelLibraryBuilder : ISampleFactoryBuilder
 {
-	public SampleModelLibrary Build()
+	public void AddFromSampleProvider(ISampleProvider sampleProvider)
 	{
-		return new SampleModelLibrary();
+		throw new System.NotImplementedException();
+	}
+
+	public SampleFactory Build()
+	{
+		return new SampleFactory();
 	}
 }
