@@ -1,9 +1,9 @@
-﻿using Fydar.Samples.Grammars.Internal;
+using Fydar.Samples.Grammars.Internal;
 using System;
 
 namespace Fydar.Samples.Grammars;
 
-public class GrammarLibrary
+public sealed class GrammarLibrary
 {
 	internal GrammarLibrary()
 	{

@@ -1,4 +1,4 @@
-﻿namespace Fydar.Samples.Grammars;
+namespace Fydar.Samples.Grammars;
 
 /// <summary>
 /// A set of standardised set of tokens used across multiple languages.

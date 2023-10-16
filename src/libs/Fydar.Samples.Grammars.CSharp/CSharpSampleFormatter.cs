@@ -1,13 +1,9 @@
-﻿using System;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-
 namespace Fydar.Samples.Grammars.CSharp;
 
+/*
 public class CSharpSampleFormatter : ISampleFormatter
 {
-	/*
+	
 	public async IAsyncEnumerable<Sample> FormatAsync(
 		SampleContent sampleContent,
 		CancellationToken cancellationToken = default)
@@ -24,7 +20,7 @@ public class CSharpSampleFormatter : ISampleFormatter
 		// 	yield return codeBlock;
 		// }
 	}
-	*/
+
 
 	static CSharpSampleFormatter()
 	{
@@ -54,3 +50,4 @@ public class CSharpSampleFormatter : ISampleFormatter
 		}
 	}
 }
+*/

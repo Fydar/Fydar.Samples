@@ -1,4 +1,4 @@
-﻿namespace Fydar.Samples.Grammars.Json;
+namespace Fydar.Samples.Grammars.Json;
 
 public static class IGrammarLibraryBuilderExtensions
 {
@@ -7,15 +7,15 @@ public static class IGrammarLibraryBuilderExtensions
 		builder.AddGrammar(language =>
 		{
 			language.DisplayName = "Json";
-			language.Aliases = new[]
-			{
+			language.Aliases =
+			[
 				"json",
 				"jsonc"
-			};
-			language.Extensions = new[]
-			{
+			];
+			language.Extensions =
+			[
 				".json"
-			};
+			];
 		});
 		return builder;
 	}

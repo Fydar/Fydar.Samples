@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 
 namespace Fydar.Samples.Grammars;
 
-public class GrammarOptions
+public sealed class GrammarOptions
 {
 	public string DisplayName { get; set; } = string.Empty;
 

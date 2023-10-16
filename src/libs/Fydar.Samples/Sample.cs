@@ -1,3 +1,5 @@
+using Fydar.Samples.Internal;
+
 namespace Fydar.Samples;
 
 public class Sample
@@ -10,7 +12,7 @@ public class Sample
 		Features = features;
 	}
 
-	public static SampleBuilder Create(string name)
+	public static ISampleBuilder Create(string name)
 	{
 		return new SampleBuilder(name);
 	}
