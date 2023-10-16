@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\libs\Fydar.Samples\Fydar.Samples.csproj" />
+    <ProjectReference Include="..\..\Fydar.Samples.SampleLibrary\Fydar.Samples.SampleLibrary.csproj" />
     <ProjectReference Include="..\..\libs\Fydar.Samples.Grammars.CSharp\Fydar.Samples.Grammars.CSharp.csproj" />
     <ProjectReference Include="..\..\libs\Fydar.Samples.Grammars.Json\Fydar.Samples.Grammars.Json.csproj" />
   </ItemGroup>

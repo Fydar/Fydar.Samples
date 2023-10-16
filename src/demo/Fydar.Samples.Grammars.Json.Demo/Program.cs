@@ -1,10 +1,9 @@
 using Fydar.Samples.BuiltIn.Themes.VisualStudio2022Dark;
 using Fydar.Samples.Grammars.Syntax;
 using Fydar.Samples.Rendering.Themes;
+using System;
 using System.Drawing;
 using System.Text;
-
-using Console = Colorful.Console;
 
 namespace Fydar.Samples.Grammars.Json.Demo;
 
@@ -19,17 +18,19 @@ internal class Program
 
 	private static void InteractiveLoop()
 	{
-		var theme = Theme.Create()
+		var theme = Theme.Create("test-theme")
 			.UseVisualStudio2022Dark()
 			.Build();
 
 		var backgroundColor32 = ThemeColor.ParseHexColor("#1e1e1e");
-		Console.BackgroundColor = Color.FromArgb(backgroundColor32.A, backgroundColor32.R, backgroundColor32.G, backgroundColor32.B);
+		// Console.BackgroundColor = Color.FromArgb(backgroundColor32.A, backgroundColor32.R, backgroundColor32.G, backgroundColor32.B);
 		Console.Clear();
 
-		var foregroundColor = theme.TextStyleLibrary.GetComputedTextStyle(StandardToken.Identifier);
-		var foregroundColor32 = ThemeColor.ParseHexColor(foregroundColor.Color);
-		Console.ForegroundColor = Color.FromArgb(foregroundColor32.A, foregroundColor32.R, foregroundColor32.G, foregroundColor32.B);
+		var consoleStyle = theme.GetComputedStyle<ThemeConsoleFont>(StandardToken.Identifier);
+		Console.ForegroundColor = consoleStyle.ForegroundColor;
+		Console.BackgroundColor = consoleStyle.BackgroundColor;
+
+		// Console.ForegroundColor = Color.FromArgb(foregroundColor.FontColor.A, foregroundColor.FontColor.R, foregroundColor.FontColor.G, foregroundColor.FontColor.B);
 
 		Console.WriteLine("");
 		Console.WriteLine(" ╔══ [Fydar.Samples.Grammars.Json.Demo] ════════════════════════════╗");
@@ -37,7 +38,7 @@ internal class Program
 		Console.WriteLine(" ╚══════════════════════════════════════════════════════════════════╝");
 		Console.WriteLine("");
 
-		var renderBlock = new RenderBlock(theme);
+		var renderBlock = new ColorfulConsoleRenderer(theme);
 
 		string json = """
 // An example glossery of markup languages

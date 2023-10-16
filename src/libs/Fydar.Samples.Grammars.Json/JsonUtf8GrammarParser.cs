@@ -1,4 +1,4 @@
-﻿using Fydar.Samples.Grammars.Syntax;
+using Fydar.Samples.Grammars.Syntax;
 using System;
 
 namespace Fydar.Samples.Grammars.Json;
@@ -15,7 +15,13 @@ public sealed class JsonUtf8GrammarParser : IUtf8GrammerParser
 
 		foreach (var token in syntaxTreeBuilder.ScanLexicalTokens(lexicalTokens))
 		{
-			if (token.Kind == JsonToken.JsonStructureStartObject)
+			if (token.Kind == JsonToken.JsonComment)
+			{
+				token.OpenNode(JsonToken.JsonComment);
+				token.CloseNode();
+			}
+
+			else if (token.Kind == JsonToken.JsonStructureStartObject)
 			{
 				if (token.ParentNodeKind == JsonToken.JsonArray)
 				{

@@ -1,4 +1,3 @@
-﻿using System;
 using System.Collections.Generic;
 
 namespace Fydar.Samples.Grammars;
@@ -41,7 +40,7 @@ public class TokenKindName
 		ClassName = "Unknown";
 		ShortClassName = "x";
 		Identifier = new TokenKind(0);
-		InheritFromNames = Array.Empty<TokenKindName>();
+		InheritFromNames = [];
 	}
 
 	public TokenKindName(string className, string shortClassName)
@@ -49,7 +48,7 @@ public class TokenKindName
 		Identifier = NewId();
 		ClassName = className;
 		ShortClassName = shortClassName;
-		InheritFromNames = Array.Empty<TokenKindName>();
+		InheritFromNames = [];
 	}
 
 	public TokenKindName(string className, string shortClassName, params TokenKindName[] inheritFrom)

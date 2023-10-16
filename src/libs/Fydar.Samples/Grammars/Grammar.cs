@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 
 namespace Fydar.Samples.Grammars;
 
-public class Grammar
+public sealed class Grammar
 {
 	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	private readonly string[] aliases;
